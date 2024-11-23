@@ -1,0 +1,9 @@
+- name: configure {{ component }} Server
+  hosts: {{ component }}
+  become: yes
+  roles:
+  - {{ component }}
+
+# ansible-playbook main.yaml -e component=db
+# ansible-playbook main.yaml -e component=backend
+# ansible-playbook main.yaml -e component=frontend
