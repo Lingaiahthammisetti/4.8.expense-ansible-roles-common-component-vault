@@ -16,7 +16,7 @@ chmod 600 /etc/ansible/.vault_pass.txt
 # ansible-playbook db.yaml --vault-password-file /etc/ansible/.vault_pass.txt
 
 # Run component playbooks
-for component in db backend frontend; do
+for component in db db backend frontend; do
   ansible-playbook main.yaml -e "component=$component" --vault-password-file /etc/ansible/.vault_pass.txt
 done
 
